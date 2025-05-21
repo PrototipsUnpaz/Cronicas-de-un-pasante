@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://o8ke8u2igsh0"]
+
+[ext_resource type="Script" uid="uid://dftlf1alkh26e" path="res://Script/custom_button.gd" id="1_l3wwp"]
+
+[node name="CustomButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Texto"
+script = ExtResource("1_l3wwp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

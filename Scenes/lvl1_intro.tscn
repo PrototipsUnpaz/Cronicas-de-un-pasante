@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmntxpw74xarv"]
+
+[ext_resource type="Texture2D" uid="uid://b2axp35df1ppt" path="res://Assets/lvl1_intro.png" id="1_q61s3"]
+[ext_resource type="Script" uid="uid://c63qtnyx4bx55" path="res://lvl1_intro.gd" id="2_7p8r6"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.600122, 0.600122)
+texture_normal = ExtResource("1_q61s3")
+script = ExtResource("2_7p8r6")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://buh1cc1lk3c48"]
+
+[ext_resource type="Texture2D" uid="uid://s3jlq4qrequt" path="res://Assets/moneda.png" id="1_2qo34"]
+[ext_resource type="Script" uid="uid://cs50qv71sywy4" path="res://Scenes/coin.gd" id="2_jgi06"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_2qo34")
+script = ExtResource("2_jgi06")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
