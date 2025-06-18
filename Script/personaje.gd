@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 
-
 func _physics_process(delta: float) -> void:
 	var input_vector: Vector2 = Vector2.ZERO
 
@@ -13,4 +12,3 @@ func _physics_process(delta: float) -> void:
 
 	velocity = input_vector * speed
 	move_and_slide()
-	

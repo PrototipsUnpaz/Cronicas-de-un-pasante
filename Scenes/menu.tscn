@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://r7vt3766f7t1"]
+[gd_scene load_steps=5 format=3 uid="uid://r7vt3766f7t1"]
 
 [ext_resource type="PackedScene" uid="uid://o8ke8u2igsh0" path="res://Scenes/custom_button.tscn" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://cyxfo6d66aje5" path="res://Script/menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://bxe10v4xaneg2" path="res://Assets/Ascenso social.png" id="2_cayip"]
 
 [sub_resource type="Theme" id="Theme_u4yt8"]
 MarginContainer/constants/margin_bottom = 10
@@ -35,6 +36,11 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(106, 55)
+scale = Vector2(1.12552, 0.632353)
+texture = ExtResource("2_cayip")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

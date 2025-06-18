@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://t8x1kivw6yin"]
+
+[ext_resource type="Texture2D" uid="uid://dxtx3h8e2n1s2" path="res://Assets/tutorial.png" id="1_ka2pi"]
+[ext_resource type="Script" uid="uid://bmw2qlvcur2t0" path="res://Scenes/tutorial.gd" id="2_feyax"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.600102, 0.600052)
+texture_normal = ExtResource("1_ka2pi")
+script = ExtResource("2_feyax")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

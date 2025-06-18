@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://wtk12nxrgw87"]
+
+[ext_resource type="Script" uid="uid://hb5lt5k34bkb" path="res://Script/Telefono.gd" id="1_auh1y"]
+[ext_resource type="Texture2D" uid="uid://dqke4pb5ohrg2" path="res://Assets/celular.png" id="2_bup87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nohs"]
+size = Vector2(85, 104)
+
+[node name="Telefono" type="Area2D"]
+script = ExtResource("1_auh1y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bup87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -2)
+shape = SubResource("RectangleShape2D_0nohs")

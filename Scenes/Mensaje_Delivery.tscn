@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://4vcvxiadgiaf"]
+
+[ext_resource type="Script" uid="uid://piac436um6bi" path="res://Script/Mensajes/Mensaje_Delivery.gd" id="1_7u6kh"]
+[ext_resource type="Texture2D" uid="uid://c6uksb2gyu08g" path="res://Assets/Mensaje.png" id="2_73ph3"]
+
+[node name="Message Popup" type="CanvasLayer"]
+script = ExtResource("1_7u6kh")
+
+[node name="Imagen del cartel" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -286.0
+offset_right = 460.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.27542, 0.30192)
+texture = ExtResource("2_73ph3")
+
+[node name="BotonRechazar" type="Button" parent="Imagen del cartel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.219
+anchor_top = 0.076
+anchor_right = 0.782
+anchor_bottom = 0.743
+offset_left = 63.52
+offset_top = 314.528
+offset_right = -444.44
+offset_bottom = -58.996
+scale = Vector2(17.7318, 16.7954)
+flat = true
+
+[node name="BotonAceptar" type="Button" parent="Imagen del cartel"]
+layout_mode = 0
+offset_left = 475.637
+offset_top = 361.023
+offset_right = 660.637
+offset_bottom = 483.023
+flat = true
