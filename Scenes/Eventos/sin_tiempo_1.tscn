@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyw47yyh137gq"]
+
+[ext_resource type="Texture2D" uid="uid://cu1yof3vvcnqn" path="res://Assets/Avanzahistoria/respuesta_6.png" id="1_roydu"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_7f2b4"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.599824, 0.599824)
+texture_normal = ExtResource("1_roydu")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_7f2b4")]

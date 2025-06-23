@@ -1,27 +1,40 @@
-# Script/Telefono.gd
 extends Area2D
 
-@onready var popup_scene = preload("res://Scenes/Mensaje_Delivery.tscn")
-@onready var evento_delivery_scene = preload("res://Scenes/evento_delivery.tscn")
+@onready var popup_scene = preload("res://Scenes/Mensaje/Mensaje_Delivery.tscn")
+@onready var evento_delivery_scene = preload("res://Scenes/Eventos/evento_delivery.tscn")
+
+var popup_instance: Node2D = null  # guardamos la instancia para no duplicar
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		mostrar_popup()
 
 func mostrar_popup():
-	var popup = popup_scene.instantiate()
-	get_tree().get_root().add_child(popup)
-	
-	# Conecta las señales SIN parámetros extras:
-	popup.aceptado.connect(_on_popup_aceptado)
-	popup.rechazado.connect(_on_popup_rechazado)
+	# Si ya está en pantalla, no hacemos nada
+	if popup_instance:
+		return
+
+	# Instanciamos el popup y lo añadimos al mismo padre que este teléfono
+	popup_instance = popup_scene.instantiate()
+	get_parent().add_child(popup_instance)
+
+	# Lo posicionamos justo encima del teléfono:
+	# ajustá el -100 según el tamaño de tu sprite
+	popup_instance.global_position = global_position + Vector2(0, -100)
+
+	# Conectamos las señales y, al cerrarlo, limpiamos la instancia
+	popup_instance.aceptado.connect(_on_popup_aceptado)
+	popup_instance.rechazado.connect(_on_popup_rechazar)
 
 func _on_popup_aceptado():
-	# Aquí instanciás lo que quieras al aceptar
+	# liberamos popup y reset
+	popup_instance.queue_free()
+	popup_instance = null
+
+	# instanciamos el evento delivery
 	var evento = evento_delivery_scene.instantiate()
 	get_tree().get_root().add_child(evento)
-	# el popup ya se liberó solo con queue_free() del Mensaje_Delivery
 
-func _on_popup_rechazado():
-	# nada más que hacer, el popup se cerró solo
-	pass
+func _on_popup_rechazar():
+	popup_instance.queue_free()
+	popup_instance = null

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqa6dxsmrnhwc"]
+
+[ext_resource type="Texture2D" uid="uid://doagole3xd3jb" path="res://Assets/Avanzahistoria/nivel 1 intro.jpg" id="1_2gu3p"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_3l8jb"]
+[ext_resource type="Script" uid="uid://bxmrg23f1jrj" path="res://Scenes/Eventos/nivel_1_intro.gd" id="2_lku81"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.600064, 0.600064)
+texture_normal = ExtResource("1_2gu3p")
+script = ExtResource("2_lku81")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_3l8jb")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

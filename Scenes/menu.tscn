@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://r7vt3766f7t1"]
+[gd_scene load_steps=9 format=3 uid="uid://r7vt3766f7t1"]
 
 [ext_resource type="PackedScene" uid="uid://o8ke8u2igsh0" path="res://Scenes/custom_button.tscn" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://cyxfo6d66aje5" path="res://Script/menu.gd" id="1_xhh6f"]
-[ext_resource type="Texture2D" uid="uid://bxe10v4xaneg2" path="res://Assets/Ascenso social.png" id="2_cayip"]
+[ext_resource type="VideoStream" uid="uid://e1v8owugiadt" path="res://Assets/menujuego.ogv" id="2_wwsa2"]
+[ext_resource type="AudioStream" uid="uid://digtm4rm6w71j" path="res://Musica/Cancion menu.mp3" id="4_158mb"]
+[ext_resource type="Texture2D" uid="uid://cbibka7sk2613" path="res://Assets/Jugar.png" id="4_wbdvm"]
+[ext_resource type="Script" uid="uid://cu4yoycbej123" path="res://Script/music_player.gd" id="4_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://be4swsjrx5fj7" path="res://Assets/Salir.png" id="5_q3rjx"]
 
 [sub_resource type="Theme" id="Theme_u4yt8"]
 MarginContainer/constants/margin_bottom = 10
@@ -20,43 +24,57 @@ grow_vertical = 2
 theme = SubResource("Theme_u4yt8")
 script = ExtResource("1_xhh6f")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -56.0
-offset_right = 80.0
-offset_bottom = 57.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(106, 55)
-scale = Vector2(1.12552, 0.632353)
-texture = ExtResource("2_cayip")
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
-text = "Las Cronicas de un Pasante
-"
+size_flags_vertical = 6
+stream = ExtResource("2_wwsa2")
+autoplay = true
+expand = true
+loop = true
 
-[node name="StartGame" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_1rerr")]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = -229.0
+offset_right = 795.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.501189, 0.501189)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "START GAME"
 
 [node name="Exit" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_1rerr")]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "EXIT"
+text = ""
+icon = ExtResource("5_q3rjx")
+flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[node name="StartGame" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_1rerr")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = ""
+icon = ExtResource("4_wbdvm")
+flat = true
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource("4_wwsa2")
+
+[node name="Player" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("4_158mb")
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]

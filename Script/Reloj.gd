@@ -19,4 +19,6 @@ func _process(delta):
 
 		if tiempo_actual == 0:
 			print("¡Tiempo agotado!")
-			get_tree().change_scene_to_file("res://Scenes/sin_tiempo.tscn")
+			Global.moral -= 20
+			get_tree().change_scene_to_file("res://Scenes/Eventos/sin_tiempo_1.tscn")
+			 

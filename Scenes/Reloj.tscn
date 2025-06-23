@@ -8,10 +8,15 @@
 script = ExtResource("1_lndab")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 1019.0
-offset_top = 2.0
-offset_right = 2043.0
-offset_bottom = 1026.0
+anchors_preset = -1
+anchor_left = 0.892
+anchor_right = 1.0
+anchor_bottom = 0.225
+offset_left = 0.416016
+offset_top = 12.0
+offset_right = 900.0
+offset_bottom = 890.2
+grow_horizontal = 0
 scale = Vector2(0.130603, 0.130603)
 max_value = 30.0
 value = 30.0

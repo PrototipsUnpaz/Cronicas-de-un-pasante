@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwvsl3w1kwowg"]
+
+[ext_resource type="Texture2D" uid="uid://bt7fe1vkrxkel" path="res://Assets/moneda.png" id="1_vpvsd"]
+[ext_resource type="Script" uid="uid://diepuh6fmtwr4" path="res://Script/moneda.gd" id="2_ub302"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.0303496, 0.0303496)
+texture_normal = ExtResource("1_vpvsd")
+script = ExtResource("2_ub302")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 362.443
+offset_top = 131.798
+offset_right = 647.443
+offset_bottom = 813.798
+scale = Vector2(1.05895, 0.945903)
+theme_override_colors/font_color = Color(0.529094, 0.415104, 0.0876162, 1)
+theme_override_font_sizes/font_size = 500
+text = "$"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

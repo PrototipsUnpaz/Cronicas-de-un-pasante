@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 @onready var boton_aceptar  = $"Imagen del cartel"/BotonAceptar
 @onready var boton_rechazar = $"Imagen del cartel"/BotonRechazar
@@ -15,8 +15,10 @@ func _ready():
 
 func _on_aceptar():
 	emit_signal("aceptado")
+	Global.dinero = 0
+	Global.moral += 15
+	Global.edad += 1
 	queue_free()
-	get_tree().change_scene_to_file("res://Scenes/evento_delivery.tscn")
 
 func _on_rechazar():
 	emit_signal("rechazado")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt4gilrqo6f7i"]
+
+[ext_resource type="Texture2D" uid="uid://trraomowepsl" path="res://Assets/Avanzahistoria/Cafedelpiso.png" id="1_csvjm"]
+
+[node name="Evento_darcafedelpiso" type="Node2D"]
+
+[node name="Cafedelpiso" type="Sprite2D" parent="."]
+texture = ExtResource("1_csvjm")

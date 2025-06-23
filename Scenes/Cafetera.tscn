@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cofjit16756j8"]
+
+[ext_resource type="Script" uid="uid://cqp0gqhrocvfm" path="res://Script/cafetera.gd" id="1_ljd3l"]
+[ext_resource type="Texture2D" uid="uid://cmu1407yihm8h" path="res://Assets/Objetos interactuables/cafetera.png" id="1_s7agl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljd3l"]
+size = Vector2(48.875, 60.125)
+
+[node name="Cafetera" type="Area2D"]
+script = ExtResource("1_ljd3l")
+
+[node name="Cafetera" type="Sprite2D" parent="."]
+position = Vector2(10.9204, -8.92036)
+scale = Vector2(0.0685149, 0.0685149)
+texture = ExtResource("1_s7agl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, -8)
+shape = SubResource("RectangleShape2D_ljd3l")

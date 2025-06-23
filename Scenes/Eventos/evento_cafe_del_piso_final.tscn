@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7sxx54g6nf5b"]
+
+[ext_resource type="Texture2D" uid="uid://trraomowepsl" path="res://Assets/Avanzahistoria/Cafedelpiso.png" id="1_sx37b"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_wo8xj"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.600039, 0.600039)
+texture_normal = ExtResource("1_sx37b")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_wo8xj")]

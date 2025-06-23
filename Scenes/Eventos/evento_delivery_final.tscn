@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxjp8nwgamma5"]
+
+[ext_resource type="Texture2D" uid="uid://bhet2hgwudbg" path="res://Assets/Avanzahistoria/PedirDelivery.png" id="1_e2ba7"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_phwon"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_left = 256.0
+offset_right = 2176.0
+offset_bottom = 1080.0
+scale = Vector2(0.632261, 0.632261)
+texture_normal = ExtResource("1_e2ba7")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_phwon")]

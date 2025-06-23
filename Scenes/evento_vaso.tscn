@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://e4rt3bkrro5t"]
-
-[ext_resource type="Texture2D" uid="uid://bo585germitl2" path="res://Assets/respuesta_1.png" id="1_2xm70"]
-
-[node name="Respuesta1" type="Sprite2D"]
-position = Vector2(579.556, 322)
-scale = Vector2(0.603704, 0.603704)
-texture = ExtResource("1_2xm70")

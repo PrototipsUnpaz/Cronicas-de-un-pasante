@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://u1oat1pj8uus"]
+
+[ext_resource type="AudioStream" uid="uid://s5hy7hara810" path="res://Musica/Loop.mp3" id="1_mncim"]
+[ext_resource type="Script" uid="uid://cg4jpwic21pjj" path="res://Script/musica.gd" id="2_ptfsi"]
+
+[node name="Musica" type="AudioStreamPlayer"]
+stream = ExtResource("1_mncim")
+script = ExtResource("2_ptfsi")
