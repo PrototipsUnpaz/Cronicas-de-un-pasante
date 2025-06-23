@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c83lbugypy2nl"]
+
+[ext_resource type="Texture2D" uid="uid://dql0g11pres3v" path="res://Assets/Avanzahistoria/GAME OVER EDAD.jpg" id="1_0124g"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.600017, 0.600017)
+texture_normal = ExtResource("1_0124g")

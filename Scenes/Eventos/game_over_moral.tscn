@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xjja8og8ml58"]
+
+[ext_resource type="Texture2D" uid="uid://dybmkha8wryc8" path="res://Assets/Avanzahistoria/GAME OVER MORAL.jpg" id="1_2xh7v"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.599939, 0.599939)
+texture_normal = ExtResource("1_2xh7v")

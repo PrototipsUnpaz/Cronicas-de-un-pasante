@@ -27,7 +27,7 @@ func sumar_dinero():
 	dinero += 10
 	
 func game_over_moral():
-	pass
+	get_tree().change_scene_to_file("res://Scenes/Eventos/game_over_moral.tscn")
 
 func game_over_edad():
-	pass
+	get_tree().change_scene_to_file("res://Scenes/Eventos/game_over_edad.tscn")
