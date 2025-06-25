@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://coil6ixha1utd"]
+
+[ext_resource type="Texture2D" uid="uid://bf855j8nhvtw5" path="res://Assets/Avanzahistoria/nivel 2 respuesta computadora.jpg" id="1_2o3i6"]
+[ext_resource type="Script" uid="uid://8ocm8nj2e2jm" path="res://Script/evento_documento_computadora.gd" id="2_51v2u"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_let27"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.832694, 0.832694)
+texture_normal = ExtResource("1_2o3i6")
+script = ExtResource("2_51v2u")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_let27")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -19,6 +19,13 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 Music="*res://scenes/BackgroundMusic.tscn"
 Global="*res://Script/GLOBAL.gd"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 move_up={

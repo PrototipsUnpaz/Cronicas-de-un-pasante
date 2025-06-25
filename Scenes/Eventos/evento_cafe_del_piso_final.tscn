@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7sxx54g6nf5b"]
+[gd_scene load_steps=4 format=3 uid="uid://b7sxx54g6nf5b"]
 
 [ext_resource type="Texture2D" uid="uid://trraomowepsl" path="res://Assets/Avanzahistoria/Cafedelpiso.png" id="1_sx37b"]
+[ext_resource type="Script" uid="uid://dlyyf0rcixubg" path="res://Script/evento_cafe_del_piso.gd" id="2_fj35c"]
 [ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_wo8xj"]
 
 [node name="TextureButton" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.600039, 0.600039)
+scale = Vector2(0.832503, 0.831327)
 texture_normal = ExtResource("1_sx37b")
+script = ExtResource("2_fj35c")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_wo8xj")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

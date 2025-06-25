@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c83lbugypy2nl"]
+[gd_scene load_steps=3 format=3 uid="uid://c83lbugypy2nl"]
 
 [ext_resource type="Texture2D" uid="uid://dql0g11pres3v" path="res://Assets/Avanzahistoria/GAME OVER EDAD.jpg" id="1_0124g"]
+[ext_resource type="Script" uid="uid://b4nyb8ychkxqo" path="res://Script/game_over_edad.gd" id="2_etskd"]
 
 [node name="TextureButton" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.600017, 0.600017)
+scale = Vector2(0.833461, 0.833461)
 texture_normal = ExtResource("1_0124g")
+script = ExtResource("2_etskd")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

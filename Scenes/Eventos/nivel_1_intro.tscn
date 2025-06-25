@@ -1,16 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqa6dxsmrnhwc"]
+[gd_scene load_steps=4 format=3 uid="uid://bsrbqvddn8x2a"]
 
-[ext_resource type="Texture2D" uid="uid://doagole3xd3jb" path="res://Assets/Avanzahistoria/nivel 1 intro.jpg" id="1_2gu3p"]
-[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_3l8jb"]
-[ext_resource type="Script" uid="uid://bxmrg23f1jrj" path="res://Scenes/Eventos/nivel_1_intro.gd" id="2_lku81"]
+[ext_resource type="Script" uid="uid://cr1luhkgyqpg" path="res://Script/Nivel_1_intro.gd" id="1_urn1j"]
+[ext_resource type="Texture2D" uid="uid://doagole3xd3jb" path="res://Assets/Avanzahistoria/nivel 1 intro.jpg" id="2_itkgq"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="3_itkgq"]
 
-[node name="TextureButton" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.600064, 0.600064)
-texture_normal = ExtResource("1_2gu3p")
-script = ExtResource("2_lku81")
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1600.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.834966, 0.845176)
+script = ExtResource("1_urn1j")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("2_3l8jb")]
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1922.0
+offset_bottom = 1078.0
+scale = Vector2(0.997183, 0.987353)
+texture_normal = ExtResource("2_itkgq")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[node name="CanvasLayer" parent="." instance=ExtResource("3_itkgq")]
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

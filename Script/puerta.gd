@@ -27,10 +27,9 @@ func _on_popup_aceptado():
 	print("hola")
 	Global.edad += 20
 	Global.moral += 5
+	get_tree().change_scene_to_file("res://Scenes/Eventos/evento_empezar_emprendimiento.tscn")
 	popup_instance = null
 
-	var evento = evento_puerta_scene.instantiate()
-	get_tree().get_root().add_child(evento)
 
 func _on_popup_rechazado():
 	popup_instance.queue_free()

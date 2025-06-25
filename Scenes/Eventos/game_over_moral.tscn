@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://xjja8og8ml58"]
+[gd_scene load_steps=3 format=3 uid="uid://xjja8og8ml58"]
 
 [ext_resource type="Texture2D" uid="uid://dybmkha8wryc8" path="res://Assets/Avanzahistoria/GAME OVER MORAL.jpg" id="1_2xh7v"]
+[ext_resource type="Script" uid="uid://dpojgbsep33x3" path="res://Script/game_over_moral.gd" id="2_ndpr3"]
 
 [node name="TextureButton" type="TextureButton"]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.599939, 0.599939)
+scale = Vector2(0.833564, 0.833564)
 texture_normal = ExtResource("1_2xh7v")
+script = ExtResource("2_ndpr3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

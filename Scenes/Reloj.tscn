@@ -1,25 +1,87 @@
 [gd_scene load_steps=4 format=3 uid="uid://c12mbrpl6juqn"]
 
-[ext_resource type="Script" uid="uid://cum0jdhqdy1ua" path="res://Script/Reloj.gd" id="1_lndab"]
 [ext_resource type="Texture2D" uid="uid://dvmj7iqpsuxrf" path="res://Assets/Reloj gris.png" id="2_6bx4t"]
 [ext_resource type="Texture2D" uid="uid://ddrrhh0pcnglm" path="res://Assets/Reloj rojo.png" id="3_5mmn0"]
 
+[sub_resource type="GDScript" id="GDScript_7yg5i"]
+script/source = "extends CanvasLayer
+
+signal countdown_started
+signal countdown_stopped
+
+@export var tiempo_inicial: float = 30.0
+var tiempo_actual: float = 0.0
+
+@onready var barra: TextureProgressBar = $TextureProgressBar
+
+var _prev_scene_path: String = \"\"
+var _countdown_active: bool = false
+
+func _ready() -> void:
+	# Guardamos la escena actual al arrancar
+	var cs = get_tree().current_scene
+	if cs:
+		_prev_scene_path = cs.get_scene_file_path()
+	else:
+		_prev_scene_path = \"\"
+
+	# Si ya estamos en Main, iniciamos el conteo
+	if _prev_scene_path == \"res://Scenes/main.tscn\":
+		_start_countdown()
+
+func _process(delta: float) -> void:
+	# Detectamos cambio de escena
+	var cs = get_tree().current_scene
+	var path: String = \"\"
+	if cs:
+		path = cs.get_scene_file_path()
+
+	if path != _prev_scene_path:
+		_on_scene_changed(path)
+		_prev_scene_path = path
+
+	# Si el conteo está activo, descontamos
+	if _countdown_active and tiempo_actual > 0:
+		tiempo_actual -= delta
+		tiempo_actual = max(tiempo_actual, 0)
+		barra.value = tiempo_actual
+
+		if tiempo_actual == 0:
+			emit_signal(\"countdown_stopped\")
+			Global.moral -= 20
+			get_tree().change_scene_to_file(\"res://Scenes/Eventos/sin_tiempo_1.tscn\")
+
+func _on_scene_changed(new_path: String) -> void:
+	if new_path == \"res://Scenes/main.tscn\":
+		_start_countdown()
+	else:
+		_stop_countdown()
+
+func _start_countdown() -> void:
+	tiempo_actual = tiempo_inicial
+	barra.value = tiempo_actual
+	_countdown_active = true
+	emit_signal(\"countdown_started\")
+
+func _stop_countdown() -> void:
+	_countdown_active = false
+	tiempo_actual = tiempo_inicial
+	barra.value = tiempo_actual
+	emit_signal(\"countdown_stopped\")
+"
+
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_lndab")
+script = SubResource("GDScript_7yg5i")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-anchors_preset = -1
-anchor_left = 0.892
-anchor_right = 1.0
-anchor_bottom = 0.225
-offset_left = 0.416016
-offset_top = 12.0
-offset_right = 900.0
-offset_bottom = 890.2
-grow_horizontal = 0
-scale = Vector2(0.130603, 0.130603)
+offset_left = -9.0
+offset_top = -5.0
+offset_right = 1015.0
+offset_bottom = 1019.0
+scale = Vector2(0.196095, 0.196095)
 max_value = 30.0
 value = 30.0
 fill_mode = 5
 texture_under = ExtResource("3_5mmn0")
 texture_progress = ExtResource("2_6bx4t")
+metadata/_edit_use_anchors_ = true

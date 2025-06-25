@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://jb7pwqmo2031"]
+
+[ext_resource type="Script" uid="uid://be8ba82apdpjd" path="res://Script/lapiz_hoja.gd" id="1_kmf7v"]
+[ext_resource type="Texture2D" uid="uid://3bsb84j6rx7y" path="res://Assets/Sprite personaje/Sprite Objetos/Hoja y lapiz.png" id="1_rjbde"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmf7v"]
+size = Vector2(99, 132)
+
+[node name="Lapiz_Hoja" type="Area2D"]
+scale = Vector2(1.01021, 1)
+script = ExtResource("1_kmf7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, 4)
+scale = Vector2(0.164063, 0.166016)
+texture = ExtResource("1_rjbde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_kmf7v")

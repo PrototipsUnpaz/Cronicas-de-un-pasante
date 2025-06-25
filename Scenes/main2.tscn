@@ -1,5 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6u3ryeug843c"]
+[gd_scene load_steps=4 format=3 uid="uid://c6u3ryeug843c"]
 
 [ext_resource type="PackedScene" uid="uid://byps6p5e8iu34" path="res://Scenes/main.tscn" id="1_3kwvq"]
+[ext_resource type="PackedScene" uid="uid://n44ob7dlqubj" path="res://Scenes/Impresora.tscn" id="2_63pow"]
+[ext_resource type="PackedScene" uid="uid://jb7pwqmo2031" path="res://Scenes/lapiz_hoja.tscn" id="3_vg7bx"]
 
 [node name="Main" instance=ExtResource("1_3kwvq")]
+
+[node name="Telefono" parent="." index="3"]
+visible = false
+position = Vector2(-2228, 154)
+
+[node name="Cafetera" parent="." index="7"]
+visible = false
+position = Vector2(1943, -168)
+
+[node name="Puerta" parent="." index="8"]
+visible = false
+position = Vector2(2457, -404)
+scale = Vector2(-1.36515, 1.59279)
+
+[node name="Computadora" parent="." index="10"]
+position = Vector2(-252, 148)
+scale = Vector2(2.68109, 1.21745)
+
+[node name="Moneda" parent="Monedas" index="0"]
+offset_left = 1102.0
+offset_top = -377.0
+offset_right = 2126.0
+offset_bottom = 647.0
+
+[node name="Moneda2" parent="Monedas" index="1"]
+offset_left = 1099.0
+offset_top = 112.0
+offset_right = 2123.0
+offset_bottom = 1136.0
+
+[node name="Impresora2" parent="." index="12" instance=ExtResource("2_63pow")]
+position = Vector2(-696, -58)
+
+[node name="Lapiz_Hoja" parent="." index="13" instance=ExtResource("3_vg7bx")]
+position = Vector2(826, 402)
+scale = Vector2(0.329337, 0.326009)
+
+[node name="Impresora" parent="." index="14"]
+visible = false
+position = Vector2(-2264, 351)

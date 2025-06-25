@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ba056fgoirn2o"]
+[gd_scene load_steps=22 format=3 uid="uid://ba056fgoirn2o"]
 
 [ext_resource type="Script" uid="uid://bq8541237ntkp" path="res://Script/personaje.gd" id="1_6molx"]
 [ext_resource type="Texture2D" uid="uid://cqei35vrfxgus" path="res://Assets/Sprite personaje/Run 1.png" id="2_38khm"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bk27g35c8eq0c" path="res://Assets/Sprite personaje/Run 6.png" id="7_j6aft"]
 [ext_resource type="Texture2D" uid="uid://bwml1agvug4ta" path="res://Assets/Sprite personaje/Run 7.png" id="8_mvla4"]
 [ext_resource type="Texture2D" uid="uid://5aochr3a7ba1" path="res://Assets/Sprite personaje/Correr asustado 7.png" id="8_uqh15"]
+[ext_resource type="Texture2D" uid="uid://8rj8ggnp2mpt" path="res://Assets/Sprite personaje/idle asustado 2.png" id="11_c284o"]
+[ext_resource type="Texture2D" uid="uid://0nl087aa0u84" path="res://Assets/Sprite personaje/idle asustado.png" id="12_l4h8x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gtbxx"]
 animations = [{
@@ -43,7 +45,7 @@ animations = [{
 "texture": ExtResource("8_uqh15")
 }],
 "loop": true,
-"name": &"Correr desesperado",
+"name": &"CorrerDesesperado",
 "speed": 7.0
 }, {
 "frames": [{
@@ -56,6 +58,17 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_c284o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l4h8x")
+}],
+"loop": true,
+"name": &"IdleDesesperado",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -95,8 +108,8 @@ script = ExtResource("1_6molx")
 position = Vector2(-1.90735e-06, 4)
 scale = Vector2(0.360465, 0.360465)
 sprite_frames = SubResource("SpriteFrames_gtbxx")
-animation = &"Idle"
-frame_progress = 0.528442
+animation = &"IdleDesesperado"
+frame_progress = 0.118963
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6.5, 56.5)

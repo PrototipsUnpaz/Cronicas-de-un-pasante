@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwptq4a46ev6"]
+[gd_scene load_steps=10 format=3 uid="uid://bwptq4a46ev6"]
 
 [ext_resource type="FontFile" uid="uid://b5essqxjr5tbu" path="res://Otros recursos/Pixellari.ttf" id="1_7wd3x"]
 [ext_resource type="Script" uid="uid://c45fjk3ixh1un" path="res://Scenes/progress_bar.gd" id="1_wcdxa"]
 [ext_resource type="Script" uid="uid://7pk4o7lrro2m" path="res://Scenes/label_2.gd" id="3_r8dhu"]
 [ext_resource type="Script" uid="uid://b1abry4suyheq" path="res://Scenes/label_3.gd" id="4_eua40"]
+[ext_resource type="Script" uid="uid://bxqtollgrk3bm" path="res://Script/Reloj.gd" id="5_4kxpy"]
+[ext_resource type="Texture2D" uid="uid://ddrrhh0pcnglm" path="res://Assets/Reloj rojo.png" id="6_ksf3y"]
+[ext_resource type="Texture2D" uid="uid://dvmj7iqpsuxrf" path="res://Assets/Reloj gris.png" id="7_5b0xl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shkik"]
 bg_color = Color(0.960784, 0, 0, 0.470588)
@@ -13,60 +16,101 @@ bg_color = Color(0.423529, 0.882353, 0.329412, 0.905882)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -216.0
-offset_top = 30.0
-offset_right = 216.0
-offset_bottom = 57.0
-grow_horizontal = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_shkik")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ehxti")
-value = 50.0
-show_percentage = false
-script = ExtResource("1_wcdxa")
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 179.0
+offset_top = 69.0
+offset_right = 271.0
+offset_bottom = 125.0
 
-[node name="Label" type="Label" parent="."]
-offset_left = 17.0
-offset_top = 14.0
-offset_right = 57.0
-offset_bottom = 37.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_7wd3x")
 theme_override_font_sizes/font_size = 25
-text = "Edad:
-     $: "
+text = "Edad:"
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 364.0
-offset_top = 33.0
-offset_right = 444.0
-offset_bottom = 59.0
+[node name="Label_edad" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_7wd3x")
 theme_override_font_sizes/font_size = 25
-text = "MORAL"
+text = "20"
+script = ExtResource("4_eua40")
 
-[node name="Label_dinero" type="Label" parent="."]
-offset_left = 86.0
-offset_top = 43.0
-offset_right = 127.0
-offset_bottom = 69.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_7wd3x")
+theme_override_font_sizes/font_size = 25
+text = "$:"
+
+[node name="Label_dinero" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_7wd3x")
 theme_override_font_sizes/font_size = 25
 text = "0"
 script = ExtResource("3_r8dhu")
 
-[node name="Label_edad" type="Label" parent="."]
-offset_left = 86.0
-offset_top = 14.0
-offset_right = 127.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Reloj" type="CanvasLayer" parent="VBoxContainer/VBoxContainer"]
+script = ExtResource("5_4kxpy")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer/VBoxContainer/Reloj"]
+offset_left = -9.0
+offset_top = -5.0
+offset_right = 1015.0
+offset_bottom = 1019.0
+scale = Vector2(0.196095, 0.196095)
+max_value = 30.0
+value = 30.0
+fill_mode = 5
+texture_under = ExtResource("6_ksf3y")
+texture_progress = ExtResource("7_5b0xl")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/VBoxContainer/Reloj/TextureProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0729002
+anchor_top = 0.367636
+anchor_right = 1.77603
+anchor_bottom = 0.506308
+offset_left = 343.515
+offset_top = 2790.37
+offset_right = 855.515
+offset_bottom = 2839.37
+grow_vertical = 2
+rotation = -1.57079
+theme_override_styles/background = SubResource("StyleBoxFlat_shkik")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ehxti")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_wcdxa")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/Reloj/TextureProgressBar/ProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0246195
+anchor_top = 0.339774
+anchor_right = 0.0583075
+anchor_bottom = 0.392131
+offset_left = -24.9439
+offset_top = -19.001
+offset_right = 55.0561
+offset_bottom = 6.99893
+scale = Vector2(5.84111, 5.00664)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_7wd3x")
 theme_override_font_sizes/font_size = 25
-text = "20"
-script = ExtResource("4_eua40")
+text = "MORAL"
+metadata/_edit_use_anchors_ = true

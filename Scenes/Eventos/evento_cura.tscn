@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd2784k26nri"]
+
+[ext_resource type="Texture2D" uid="uid://brif2kla8gc17" path="res://Assets/Avanzahistoria/nivel 2 respuesta telefono.jpg" id="1_4a2oy"]
+[ext_resource type="Script" uid="uid://pgbx0sx41g2g" path="res://Script/evento_cura.gd" id="1_srxgx"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_srxgx"]
+
+[node name="Evento_Cura" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srxgx")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.833111, 0.839073)
+texture_normal = ExtResource("1_4a2oy")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_srxgx")]
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

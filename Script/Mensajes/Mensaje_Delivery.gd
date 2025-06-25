@@ -18,6 +18,7 @@ func _on_aceptar():
 	Global.dinero = 0
 	Global.moral += 15
 	Global.edad += 1
+	get_tree().change_scene_to_file("res://Scenes/Eventos/evento_delivery_final.tscn")
 	queue_free()
 
 func _on_rechazar():

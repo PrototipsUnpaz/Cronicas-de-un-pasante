@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1rdwxvli6xq0"]
+
+[ext_resource type="Script" uid="uid://cx61lhf5lsy6e" path="res://Script/ciudad.gd" id="1_2xey7"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_tcmyo"]
+[ext_resource type="Texture2D" uid="uid://fjwrjt8ei8a7" path="res://Assets/Ciudad.png" id="3_xy523"]
+[ext_resource type="FontFile" uid="uid://b5essqxjr5tbu" path="res://Otros recursos/Pixellari.ttf" id="4_0hfvo"]
+[ext_resource type="PackedScene" uid="uid://ba056fgoirn2o" path="res://Scenes/Personaje.tscn" id="5_t1qgo"]
+[ext_resource type="Script" uid="uid://85rdacirdmnl" path="res://Script/puerta_oficina2.gd" id="6_2xey7"]
+
+[sub_resource type="GDScript" id="GDScript_prvgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fk5f"]
+size = Vector2(254.5, 238)
+
+[node name="Ciudad" type="Node2D"]
+script = ExtResource("1_2xey7")
+
+[node name="Ciudad" type="Sprite2D" parent="."]
+position = Vector2(294, -736)
+scale = Vector2(2.12598, 2.04297)
+texture = ExtResource("3_xy523")
+
+[node name="Label2" type="Label" parent="Ciudad"]
+offset_left = 135.232
+offset_top = -46.0114
+offset_right = 448.232
+offset_bottom = 19.9886
+theme_override_colors/font_color = Color(0.231373, 0.215686, 0.207843, 1)
+theme_override_fonts/font = ExtResource("4_0hfvo")
+theme_override_font_sizes/font_size = 17
+text = "Mmm... la tienda sigue cerrada..."
+
+[node name="Personaje" parent="Ciudad" instance=ExtResource("5_t1qgo")]
+position = Vector2(7.76113, 278.516)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D2" type="Camera2D" parent="Ciudad/Personaje"]
+position = Vector2(-3.76297, -165.445)
+scale = Vector2(-0.275334, -17097.9)
+zoom = Vector2(0.9, 0.9)
+limit_left = -838
+limit_top = -1167
+limit_right = 1200
+limit_bottom = 814
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
+script = SubResource("GDScript_prvgo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ciudad"]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ciudad/StaticBody2D"]
+position = Vector2(4, 7)
+polygon = PackedVector2Array(-1459, -1140, -1488, 1515, 1302, 1515, 1262, -1335, -1447, -1319, -1453, -1168, -1029, -1033, -1023, -290, 934.392, -280.132, 948.503, 462.904, 954, 501, 668, 304, 373, 498, 370, 1076, 342, 1025, -395, 1022, -403, 434, -694, 297, -964, 445, -1039, 448, -1026, 420, -1036, -1015)
+
+[node name="Puerta Oficina" type="Area2D" parent="."]
+script = ExtResource("6_2xey7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta Oficina"]
+position = Vector2(-243, -1164)
+scale = Vector2(1.24829, 1.1519)
+shape = SubResource("RectangleShape2D_4fk5f")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_tcmyo")]

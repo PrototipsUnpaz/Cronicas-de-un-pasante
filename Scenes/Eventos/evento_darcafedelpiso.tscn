@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt4gilrqo6f7i"]
+[gd_scene load_steps=3 format=3 uid="uid://bt4gilrqo6f7i"]
 
 [ext_resource type="Texture2D" uid="uid://trraomowepsl" path="res://Assets/Avanzahistoria/Cafedelpiso.png" id="1_csvjm"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_c1vur"]
 
 [node name="Evento_darcafedelpiso" type="Node2D"]
 
 [node name="Cafedelpiso" type="Sprite2D" parent="."]
+position = Vector2(803.444, 447)
+scale = Vector2(0.82963, 0.82963)
 texture = ExtResource("1_csvjm")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_c1vur")]

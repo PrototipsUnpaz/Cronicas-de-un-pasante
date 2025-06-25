@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxjp8nwgamma5"]
+[gd_scene load_steps=4 format=3 uid="uid://bxjp8nwgamma5"]
 
-[ext_resource type="Texture2D" uid="uid://bhet2hgwudbg" path="res://Assets/Avanzahistoria/PedirDelivery.png" id="1_e2ba7"]
+[ext_resource type="Texture2D" uid="uid://dfvt7j2ihhu47" path="res://Assets/Avanzahistoria/respuesta_3.png" id="1_e2ba7"]
+[ext_resource type="Script" uid="uid://db48dsha7413t" path="res://Script/evento_delivery.gd" id="2_jygg3"]
 [ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_phwon"]
 
 [node name="TextureButton" type="TextureButton"]
-offset_left = 256.0
-offset_right = 2176.0
-offset_bottom = 1080.0
-scale = Vector2(0.632261, 0.632261)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.834038, 0.831069)
 texture_normal = ExtResource("1_e2ba7")
+script = ExtResource("2_jygg3")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_phwon")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

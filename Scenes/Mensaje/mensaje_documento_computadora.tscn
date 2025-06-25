@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjalf37f5aqdp"]
+
+[ext_resource type="Texture2D" uid="uid://55t5oiblpv7s" path="res://Assets/Mensajes/Mensaje(DocumentoComputadora).png" id="1_g64we"]
+[ext_resource type="Script" uid="uid://cbk5j1jjxbd33" path="res://Script/Mensajes/mensaje_documento_computadora.gd" id="1_mk42e"]
+
+[node name="mensaje_DocumentoComputadora" type="Node2D"]
+script = ExtResource("1_mk42e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -144.0
+offset_top = -87.0
+offset_right = 776.0
+offset_bottom = 485.0
+scale = Vector2(0.309158, 0.309158)
+texture = ExtResource("1_g64we")
+
+[node name="BotonRechazar" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 261.812
+offset_top = 358.159
+offset_right = 445.812
+offset_bottom = 484.159
+flat = true
+
+[node name="BotonAceptar" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 362.0
+offset_right = 660.0
+offset_bottom = 479.0
+flat = true

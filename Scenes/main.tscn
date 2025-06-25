@@ -1,20 +1,21 @@
-[gd_scene load_steps=18 format=4 uid="uid://byps6p5e8iu34"]
+[gd_scene load_steps=19 format=4 uid="uid://byps6p5e8iu34"]
 
-[ext_resource type="PackedScene" uid="uid://bevggxqlqybqi" path="res://Scenes/suelo.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://bevggxqlqybqi" path="res://Scenes/Suelo.tscn" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://btvhvhvxsixg7" path="res://Script/main.gd" id="1_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://ba056fgoirn2o" path="res://Scenes/Personaje.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://bqr3qq8s6ur1j" path="res://Scenes/paredes.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ccech8jnnwwd1" path="res://Scenes/objetos_colissiones.tscn" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://c21s6x6a8hc1l" path="res://Assets/objeto  colissiones1.png" id="4_344ge"]
-[ext_resource type="PackedScene" uid="uid://c12mbrpl6juqn" path="res://Scenes/Reloj.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://wtk12nxrgw87" path="res://Scenes/Telefono.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://4vcvxiadgiaf" path="res://Scenes/Mensaje/Mensaje_Delivery.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cofjit16756j8" path="res://Scenes/Cafetera.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://1kmtug2sv1uc" path="res://Scenes/Mensaje/mensaje_darcafedelsuelo.tscn" id="8_d1ilt"]
 [ext_resource type="FontFile" uid="uid://b5essqxjr5tbu" path="res://Otros recursos/Pixellari.ttf" id="9_wsu2k"]
-[ext_resource type="PackedScene" uid="uid://1qin2nuwl587" path="res://Scenes/Puerta.tscn" id="11_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://1qin2nuwl587" path="res://Scenes/puerta.tscn" id="11_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://bwvsl3w1kwowg" path="res://Scenes/Moneda.tscn" id="13_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://byxdj8lrolwx5" path="res://Scenes/computadoraDocumento.tscn" id="15_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://caf8w3wug6uhk" path="res://Assets/Objetos interactuables/impresora.png" id="16_k12tt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynf5e"]
 texture = ExtResource("4_344ge")
@@ -1293,8 +1294,6 @@ sources/0 = SubResource("TileSetAtlasSource_ynf5e")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jkdf5")
 
-[node name="Hud" parent="." instance=ExtResource("12_6iyac")]
-
 [node name="Suelo" parent="." instance=ExtResource("1_8gbba")]
 tile_map_data = PackedByteArray("AAD3//z/AAABAAAAAAD4//z/AAABAAAAAAD5//z/AAABAAAAAAD6//z/AAACAAAAAAD7//z/AAABAAAAAAD8//z/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAD///z/AAADAAAAAAAAAPz/AAADAAAAAAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAAAAAAEAPz/AAABAAAAAAAFAPz/AAABAAAAAAAFAP3/AAABAAAAAAAGAP3/AAADAAAAAAAHAP3/AAABAAAAAAAHAPz/AAABAAAAAAAIAPz/AAADAAAAAAAGAPz/AAABAAAAAAAEAP3/AAABAAAAAAADAP3/AAABAAAAAAACAP3/AAABAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAD7//3/AAABAAAAAAD6//3/AAABAAAAAAD5//3/AAABAAAAAAD4//3/AAABAAAAAAD3//3/AAABAAAAAAD3//7/AAABAAAAAAD3////AAABAAAAAAD3/wAAAAABAAAAAAD3/wEAAAABAAAAAAD4/wEAAAABAAAAAAD4/wAAAAABAAAAAAD4////AAABAAAAAAD4//7/AAABAAAAAAD5//7/AAABAAAAAAD5////AAADAAAAAAD6////AAABAAAAAAD6/wAAAAABAAAAAAD6/wEAAAABAAAAAAD5/wEAAAABAAAAAAD5/wAAAAABAAAAAAD6//7/AAABAAAAAAD7//7/AAABAAAAAAD8//7/AAABAAAAAAD9//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD9/wIAAAABAAAAAAD8/wIAAAABAAAAAAD7/wIAAAABAAAAAAD7/wEAAAABAAAAAAD7/wAAAAABAAAAAAD7////AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP//AAABAAAAAAAAAAAAAAADAAAAAAD//wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAACAAAAAAD8/wAAAAABAAAAAAD8////AAABAAAAAAABAP7/AAABAAAAAAACAP//AAABAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAABAAAAAAD//wAAAAABAAAAAAD9////AAABAAAAAAAAAP//AAABAAAAAAD9/wAAAAABAAAAAAD/////AAABAAAAAAACAP7/AAABAAAAAAADAP//AAABAAAAAAAEAP//AAACAAAAAAAFAAAAAAABAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAEAAIAAAABAAAAAAADAAIAAAABAAAAAAACAAEAAAABAAAAAAADAAAAAAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAGAP//AAABAAAAAAAGAAAAAAABAAAAAAADAAEAAAABAAAAAAAFAP//AAABAAAAAAAEAAEAAAABAAAAAAACAAAAAAABAAAAAAADAP7/AAABAAAAAAAEAAAAAAABAAAAAAAHAP7/AAABAAAAAAAIAP3/AAABAAAAAAAIAP7/AAABAAAAAAAIAP//AAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAADAAAAAAAIAAIAAAABAAAAAAAIAAMAAAABAAAAAAAIAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAQAAAABAAAAAAAGAAQAAAABAAAAAAAFAAQAAAABAAAAAAAEAAQAAAABAAAAAAADAAQAAAABAAAAAAACAAQAAAABAAAAAAABAAQAAAABAAAAAAAAAAQAAAABAAAAAAD//wQAAAABAAAAAAD+/wQAAAABAAAAAAD9/wQAAAABAAAAAAD8/wQAAAABAAAAAAD7/wQAAAABAAAAAAD6/wQAAAABAAAAAAD5/wQAAAACAAAAAAD4/wQAAAABAAAAAAD3/wQAAAABAAAAAAD3/wMAAAABAAAAAAD3/wIAAAABAAAAAAD4/wIAAAABAAAAAAD5/wIAAAABAAAAAAD5/wMAAAABAAAAAAD6/wMAAAABAAAAAAD4/wMAAAABAAAAAAD6/wIAAAABAAAAAAD7/wMAAAABAAAAAAD8/wMAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAABAAAAAAD//wMAAAABAAAAAAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAACAAAAAAAGAAIAAAABAAAAAAACAAIAAAABAAAAAAABAAIAAAABAAAAAAAAAAIAAAABAAAAAAD//wIAAAABAAAAAAD+/wIAAAABAAAAAAAGAAEAAAAEAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAABAAAAAAA=")
 
@@ -1329,6 +1328,8 @@ obtener café antes
 de que se acabe el
 tiempo."
 
+[node name="Hud" parent="." instance=ExtResource("12_6iyac")]
+
 [node name="Personaje" parent="." instance=ExtResource("1_yh5la")]
 position = Vector2(7, -446)
 scale = Vector2(0.7, 0.7)
@@ -1343,8 +1344,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="Reloj" parent="." instance=ExtResource("5_kry3j")]
-
 [node name="Cafetera" parent="." instance=ExtResource("7_hptm8")]
 position = Vector2(815, 94)
 
@@ -1357,6 +1356,10 @@ position = Vector2(-4, -573)
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-1162, 647)
 
+[node name="Computadora" parent="." instance=ExtResource("15_wsu2k")]
+position = Vector2(-2400, 409)
+scale = Vector2(0.853266, 0.788856)
+
 [node name="Monedas" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -1365,10 +1368,10 @@ offset_bottom = 40.0
 
 [node name="Moneda" parent="Monedas" instance=ExtResource("13_fdnlq")]
 layout_mode = 2
-offset_left = -189.0
-offset_top = -267.0
-offset_right = 835.0
-offset_bottom = 757.0
+offset_left = 676.0
+offset_top = 344.0
+offset_right = 1700.0
+offset_bottom = 1368.0
 
 [node name="Moneda2" parent="Monedas" instance=ExtResource("13_fdnlq")]
 layout_mode = 2
@@ -1376,3 +1379,8 @@ offset_left = -189.0
 offset_top = 115.0
 offset_right = 835.0
 offset_bottom = 1139.0
+
+[node name="Impresora" type="Sprite2D" parent="."]
+position = Vector2(-1090, -62)
+scale = Vector2(0.15699, 0.15699)
+texture = ExtResource("16_k12tt")

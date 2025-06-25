@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjawxi0b73do"]
+
+[ext_resource type="Texture2D" uid="uid://c1m6ukqrq5685" path="res://Assets/Mensajes/Mensaje(hacereldocumentoalapiz).png" id="1_d5704"]
+[ext_resource type="Script" uid="uid://b8vc8yjbuerq" path="res://Script/Mensajes/mensaje_lapiz_papel.gd" id="1_hwthm"]
+
+[node name="Mensaje_LapizPapel" type="Node2D"]
+script = ExtResource("1_hwthm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -158.0
+offset_top = -107.0
+offset_right = 762.0
+offset_bottom = 465.0
+scale = Vector2(0.338229, 0.338229)
+texture = ExtResource("1_d5704")
+
+[node name="BotonRechazar" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 357.0
+offset_right = 449.0
+offset_bottom = 481.0
+flat = true
+
+[node name="BotonAceptar" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 361.0
+offset_right = 664.0
+offset_bottom = 483.0
+flat = true

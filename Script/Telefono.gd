@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var popup_scene = preload("res://Scenes/Mensaje/Mensaje_Delivery.tscn")
-@onready var evento_delivery_scene = preload("res://Scenes/Eventos/evento_delivery.tscn")
+@onready var evento_delivery_scene = preload("res://Scenes/Eventos/evento_delivery_final.tscn")
 
 var popup_instance: Node2D = null  # guardamos la instancia para no duplicar
 
@@ -31,9 +31,6 @@ func _on_popup_aceptado():
 	popup_instance.queue_free()
 	popup_instance = null
 
-	# instanciamos el evento delivery
-	var evento = evento_delivery_scene.instantiate()
-	get_tree().get_root().add_child(evento)
 
 func _on_popup_rechazar():
 	popup_instance.queue_free()

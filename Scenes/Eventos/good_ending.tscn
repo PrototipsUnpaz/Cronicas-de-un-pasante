@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfqiowfqeeiv6"]
+
+[ext_resource type="Texture2D" uid="uid://bmggcbl8pqwdm" path="res://Assets/Avanzahistoria/GOOD ENDING.jpg" id="1_eqedy"]
+[ext_resource type="Script" uid="uid://ccld4a7if4oj3" path="res://Script/good_ending.gd" id="2_pggjq"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.833295, 0.833295)
+texture_normal = ExtResource("1_eqedy")
+script = ExtResource("2_pggjq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -18,8 +18,8 @@ script = ExtResource("1_4fk5f")
 [node name="CanvasLayer" parent="." instance=ExtResource("2_u7rtk")]
 
 [node name="Ciudad" type="Sprite2D" parent="."]
-position = Vector2(187, -211)
-scale = Vector2(2, 2)
+position = Vector2(169.5, -189)
+scale = Vector2(2.12598, 2.04297)
 texture = ExtResource("1_prvgo")
 
 [node name="Label" type="Label" parent="Ciudad"]
@@ -46,35 +46,33 @@ text = "Haz clic en la puerta de la
 oficina para entrar a trabajar."
 
 [node name="Personaje" parent="Ciudad" instance=ExtResource("2_jlpkk")]
-position = Vector2(-1.5, 344)
+position = Vector2(7.76113, 278.516)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D2" type="Camera2D" parent="Ciudad/Personaje"]
-position = Vector2(-8, -207)
-scale = Vector2(2, 2)
+position = Vector2(-3.76297, -165.445)
+scale = Vector2(-0.275334, -17097.9)
 zoom = Vector2(0.9, 0.9)
 limit_left = -838
 limit_top = -1167
 limit_right = 1200
 limit_bottom = 814
 limit_smoothed = true
-position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
 script = SubResource("GDScript_prvgo")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ciudad"]
-visible = false
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ciudad/StaticBody2D"]
 position = Vector2(4, 7)
-polygon = PackedVector2Array(-1459, -1140, -1488, 1515, 1302, 1515, 1262, -1335, -1447, -1319, -1453, -1168, -1029, -1033, -1023, -290, 1020, -286, 1033, 492, 954, 501, 668, 304, 373, 498, 370, 1076, 342, 1025, -395, 1022, -403, 434, -694, 297, -964, 445, -1039, 448, -1026, 420, -1036, -1015)
+polygon = PackedVector2Array(-1459, -1140, -1488, 1515, 1302, 1515, 1262, -1335, -1447, -1319, -1453, -1168, -1029, -1033, -1023, -290, 934.392, -280.132, 948.503, 462.904, 954, 501, 668, 304, 373, 498, 370, 1076, 342, 1025, -395, 1022, -403, 434, -694, 297, -964, 445, -1039, 448, -1026, 420, -1036, -1015)
 
 [node name="Puerta Oficina" type="Area2D" parent="."]
 script = ExtResource("3_jlpkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta Oficina"]
-position = Vector2(-318.25, -625)
+position = Vector2(-375, -603)
 shape = SubResource("RectangleShape2D_4fk5f")

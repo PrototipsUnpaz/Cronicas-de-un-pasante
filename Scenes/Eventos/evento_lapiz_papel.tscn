@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhejxijod8ofm"]
+
+[ext_resource type="Texture2D" uid="uid://l8oyoi4ptfrk" path="res://Assets/Avanzahistoria/nivel 2 respuesta lapiz.jpg" id="1_kmiw3"]
+[ext_resource type="Script" uid="uid://dl7fd0ujqba6k" path="res://Script/evento_lapiz_papel.gd" id="2_1y81h"]
+[ext_resource type="PackedScene" uid="uid://bwptq4a46ev6" path="res://Scenes/edad_dinero_moral.tscn" id="2_cvsmq"]
+
+[node name="Evento_LapizPapel" type="TextureButton"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.833412, 0.833412)
+texture_normal = ExtResource("1_kmiw3")
+script = ExtResource("2_1y81h")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_cvsmq")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
